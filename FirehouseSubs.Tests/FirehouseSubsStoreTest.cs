@@ -7,21 +7,21 @@ namespace FirehouseSubs.Tests
     public class FirehouseSubsStoreTest
     {
         [TestMethod]
-        public void TestGetStoreByZipCodeAsync_ValidInput_ReturnsJsonResponse()
+        public void TestGetStoresByZipCodeAsync_ValidInput_ReturnsJsonResponse()
         {
             FirehouseClient client = new FirehouseClient();
-            List<FirehouseSubsStore> stores = client.GetStoreByZipCodeAsync(32034).Result;
+            List<FirehouseSubsStore> stores = client.GetStoresByZipCodeAsync(32034).Result;
             Assert.IsNotNull(stores);
             Assert.IsTrue(stores.Count >= 0);
         }
 
         [TestMethod]
-        public void TestGetStoreByZipCodeAsync_InalidInput_ReturnsError()
+        public void TestGetStoresByZipCodeAsync_InalidInput_ReturnsError()
         {
             FirehouseClient client = new FirehouseClient();
             try
             {
-                List<FirehouseSubsStore> stores = client.GetStoreByZipCodeAsync(123456789).Result;
+                List<FirehouseSubsStore> stores = client.GetStoresByZipCodeAsync(123456789).Result;
                 Assert.IsNotNull(stores);
             }
             catch (Exception ex) 
@@ -34,21 +34,21 @@ namespace FirehouseSubs.Tests
 
 
         [TestMethod]
-        public void TestGetStoreByCityAsync_ValidInput_ReturnsJsonResponse()
+        public void TestGetStoresByCityAsync_ValidInput_ReturnsJsonResponse()
         {
             FirehouseClient client = new FirehouseClient();
-            List<FirehouseSubsStore> stores = client.GetStoreByCityAsync("Jacksonville").Result;
+            List<FirehouseSubsStore> stores = client.GetStoresByCityAsync("Jacksonville").Result;
             Assert.IsNotNull(stores);
             Assert.IsTrue(stores.Count >= 0);
         }
 
         [TestMethod]
-        public void TestGetStoreByCityAsync_InalidInput_ReturnsError()
+        public void TestGetStoresByCityAsync_InalidInput_ReturnsError()
         {
             FirehouseClient client = new FirehouseClient();
             try
             {
-                List<FirehouseSubsStore> stores = client.GetStoreByCityAsync(string.Empty).Result;
+                List<FirehouseSubsStore> stores = client.GetStoresByCityAsync(string.Empty).Result;
                 Assert.IsNotNull(stores);
             }
             catch (Exception ex)
@@ -60,21 +60,21 @@ namespace FirehouseSubs.Tests
         }
 
         [TestMethod]
-        public void TestGetStoreByStateAsync_ValidInput_ReturnsJsonResponse()
+        public void TestGetStoresByStateAsync_ValidInput_ReturnsJsonResponse()
         {
             FirehouseClient client = new FirehouseClient();
-            List<FirehouseSubsStore> stores = client.GetStoreByStateAsync("Florida").Result;
+            List<FirehouseSubsStore> stores = client.GetStoresByStateAsync("Florida").Result;
             Assert.IsNotNull(stores);
             Assert.IsTrue(stores.Count >= 0);
         }
 
         [TestMethod]
-        public void TestGetStoreByStateAsync_InalidInput_ReturnsError()
+        public void TestGetStoresByStateAsync_InalidInput_ReturnsError()
         {
             FirehouseClient client = new FirehouseClient();
             try
             {
-                List<FirehouseSubsStore> stores = client.GetStoreByStateAsync(string.Empty).Result;
+                List<FirehouseSubsStore> stores = client.GetStoresByStateAsync(string.Empty).Result;
                 Assert.IsNotNull(stores);
             }
             catch (Exception ex)

@@ -9,7 +9,7 @@ namespace FirehouseSubs
     {
         private readonly string _url = "https://www.firehousesubs.com/FindLocations/";
 
-        public async Task<List<FirehouseSubsStore>> GetStoreByZipCodeAsync(uint zipCode, uint maxRecords = 50)
+        public async Task<List<FirehouseSubsStore>> GetStoresByZipCodeAsync(uint zipCode, uint maxRecords = 50)
         {
             if (maxRecords > 50)
             {
@@ -24,7 +24,7 @@ namespace FirehouseSubs
             return await MakeAPICall<List<FirehouseSubsStore>>(_url + "/GetNearbyLocations/" + queryParams);
         }
 
-        public async Task<List<FirehouseSubsStore>> GetStoreByCityAsync(string cityName, uint maxRecords = 50)
+        public async Task<List<FirehouseSubsStore>> GetStoresByCityAsync(string cityName, uint maxRecords = 50)
         {
             if (maxRecords > 50)
             {
@@ -39,7 +39,7 @@ namespace FirehouseSubs
             return await MakeAPICall<List<FirehouseSubsStore>>(_url + "/GetNearbyLocations/" + queryParams);
         }
 
-        public async Task<List<FirehouseSubsStore>> GetStoreByStateAsync(string stateName)
+        public async Task<List<FirehouseSubsStore>> GetStoresByStateAsync(string stateName)
         {
             if (LocationUtility.StateNamesToCodes.ContainsKey(stateName))
             {
