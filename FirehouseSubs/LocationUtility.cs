@@ -4,11 +4,11 @@ using System.Net;
 
 namespace FirehouseSubs
 {
-    public static class LocationUtility
+    internal static class LocationUtility
     {
         private readonly static string _url = "https://www.firehousesubs.com/umbraco/api/geolocationapi/get";
 
-        public static async Task<List<UmbracoLocation>> GetLocationInformationFromInputAsync(object input)
+        internal static async Task<List<UmbracoLocation>> GetLocationInformationFromInputAsync(object input)
         {
             string queryParam = QueryUtility.FormatQueryParam("?address", input.ToString());
             return await MakeAPICall<List<UmbracoLocation>>(_url + queryParam);

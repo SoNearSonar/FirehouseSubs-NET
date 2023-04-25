@@ -2,7 +2,7 @@
 
 namespace FirehouseSubs.Models
 {
-    public class UmbracoLocation
+    internal class UmbracoLocation
     {
         [JsonProperty(PropertyName = "lat")]
         public double Latitude { get; set; }
