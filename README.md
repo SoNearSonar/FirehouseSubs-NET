@@ -1,4 +1,4 @@
-# FirehouseSubs-NET
+# FirehouseSubs-NET [![FirehouseSubs NuGet](https://img.shields.io/nuget/vpre/FirehouseSubs?label=FirehouseSubs&style=flat-square)](https://www.nuget.org/packages/FirehouseSubs/)
 A client for the unofficial Firehouse Subs API, written in C#/NET. You can get information for stores that are in a city, state, or zip code.
 
 ## Features:
